@@ -1,0 +1,122 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* -------------------- TOP NAVBAR -------------------- */
+.topNavbar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  background-color: #0b1c2d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navItem:hover {
+  background-color: #1c2c44;
+  color: #ffffff;
+}
+
+.navItem.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.icon {
+  font-size: 1.1rem;
+}
+
+.label {
+  font-size: 0.95rem;
+}
+
+/* -------------------- USER MENU -------------------- */
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.role {
+  color: #cbd5e1;
+}
+
+.logoutButton {
+  background-color: #2563eb;
+  border: none;
+  color: #fff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: #1e4bb8;
+}
+
+/* -------------------- MAIN CONTENT -------------------- */
+.contentArea {
+  padding: 6rem 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  .topNavbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .userMenu {
+    gap: 0.5rem;
+    justify-content: center;
+  }
+}

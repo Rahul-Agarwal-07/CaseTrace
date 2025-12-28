@@ -1,0 +1,244 @@
+/* ---------------------- GENERAL LAYOUT ---------------------- */
+.dashboard {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* ---------------------- HEADER ---------------------- */
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pageSubtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* ---------------------- STATS GRID ---------------------- */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+}
+
+.statCard span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.statCard strong {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-top: 0.25rem;
+}
+
+/* ---------------------- SECTION ---------------------- */
+.section {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------- FORMS ---------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #374151;
+}
+
+.input, .textarea, .select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  border-color: #3b82f6;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* ---------------------- FORM BUTTONS ---------------------- */
+.primaryButton {
+  background-color: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: #2563eb;
+}
+
+.secondaryButton {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.secondaryButton:hover {
+  background-color: #d1d5db;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+/* ---------------------- TABLE ---------------------- */
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.table th {
+  font-weight: 600;
+  background-color: #f9fafb;
+}
+
+.table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+.emptyMessage {
+  padding: 1rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* ---------------------- STATUS BADGES ---------------------- */
+.statusVerified {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.statusPending {
+  background-color: #fef3c7;
+  color: #78350f;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.verifyButton {
+  background-color: #10b981;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.verifyButton:hover {
+  background-color: #059669;
+}
+
+.verifiedText {
+  color: #10b981;
+  font-weight: 500;
+}
+
+/* ---------------------- DASHBOARD RESPONSIVE ---------------------- */
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .secondaryButton {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .table {
+    min-width: 500px;
+  }
+}

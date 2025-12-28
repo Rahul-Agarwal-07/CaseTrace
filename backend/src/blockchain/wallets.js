@@ -1,6 +1,6 @@
 const { ethers } = require("ethers");
 const provider = require("./provider");
-require("dotenv").config();
+require("dotenv").config({ path: "../../.env" });
 
 // Deployer / admin wallet
 const deployerWallet = new ethers.Wallet(process.env.DEPLOYER_PRIVATE_KEY, provider);

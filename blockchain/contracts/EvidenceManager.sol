@@ -45,12 +45,17 @@ contract EvidenceManager {
     }
 
     // Viewer or Judge accesses evidence
-    function accessEvidence(string memory caseId, uint256 index) external returns (string memory, bytes32) {
+    function getEvidence(string memory caseId, uint256 index) 
+    external view returns (string memory cid, bytes32 fileHash, bool verified, uint256 timestamp) 
+    {
+        Evidence storage e = caseEvidences[caseId][index];
+        return (e.cid, e.fileHash, e.verified, e.timestamp);
+    }
+
+    function logEvidenceAccess(string memory caseId, uint256 index) external {
         Role r = roles[msg.sender];
         require(r == Role.VIEWER || r == Role.JUDGE, "Not allowed");
-        Evidence storage e = caseEvidences[caseId][index];
         caseAccessLogs[caseId].push(AccessLog(msg.sender, block.timestamp, Action.VIEW));
-        return (e.cid, e.fileHash);
     }
 
     // Judge verifies evidence

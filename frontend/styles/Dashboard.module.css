@@ -1,0 +1,299 @@
+/* =========================================================
+   ROOT / BASE
+   ========================================================= */
+
+.dashboard {
+  min-height: 100vh;
+  padding: 2.5rem;
+  background-color: #f8fafc;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #0f172a;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.pageSubtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.statCard span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.statCard strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   SECTION CARD
+   ========================================================= */
+
+.section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.form {
+  max-width: 520px;
+}
+
+.formGroup {
+  margin-bottom: 1.2rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+/* =========================================================
+   BUTTONS (UNIFIED)
+   ========================================================= */
+
+.primaryButton,
+.secondaryButton,
+.verifyButton {
+  height: 40px;
+  min-width: 90px;
+  padding: 0 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryButton {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.secondaryButton {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.verifyButton {
+  margin-left: 1rem;
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+/* Disabled state */
+.primaryButton:disabled,
+.verifyButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.table th,
+.table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+/* Actions column */
+.actionCell {
+  text-align: left;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* =========================================================
+   AUDIT TRAIL ALIGNMENT
+   ========================================================= */
+
+.section table th {
+  text-align: center;
+}
+
+.section table td {
+  text-align: center;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 600px;
+  max-width: 90%;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.modalButtons button {
+  flex: 1;
+  height: 40px;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   GLOBAL LOADER
+   ========================================================= */
+
+.globalLoader {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* =========================================================
+   SPINNERS
+   ========================================================= */
+
+.spinnerLarge {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1.4rem;
+  }
+
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

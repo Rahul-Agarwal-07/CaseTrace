@@ -1,20 +1,11 @@
 const { ethers } = require("ethers");
-const provider = require("./provider");
-require("dotenv").config();
-const { deployerWallet, investigatorWallet, viewerWallet, judgeWallet } = require("./wallets");
+require("dotenv").config({ path: "../../.env" });
 
-const contractABI = require("../../blockchain/artifacts/contracts/EvidenceManager.sol/EvidenceManager.json").abi;
+const contractArtifact = require("../../../blockchain/artifacts/contracts/EvidenceManager.sol/EvidenceManager.json");
 const contractAddress = process.env.CONTRACT_ADDRESS;
 
-// Connecting contract to a specific wallet
 function getContract(wallet) {
-  return new ethers.Contract(contractAddress, contractABI, wallet);
+  return new ethers.Contract(contractAddress, contractArtifact.abi, wallet);
 }
 
-module.exports = {
-  getContract,
-  deployerWallet,
-  investigatorWallet,
-  viewerWallet,
-  judgeWallet
-};
+module.exports = { getContract };

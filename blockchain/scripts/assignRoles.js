@@ -9,7 +9,7 @@ async function main() {
   const contract = await EvidenceManager.attach(contractAddress);
 
   // Replace with your 3 wallets
-  const investigator = "0x23277e186e67A8e8255C11b2521AE2aD5Dc7Ef58";
+  const investigator = "0x3A7CEeB74fEeCDA5a5324aEFB72b11efDcb4B2ae";
   const viewer = "0xd4c26eb50406dd8BE9FBD75fCaaE90E99Cc997ad";
   const judge = "0x41BE84D2429ba03c9d4158e69775e11386504266";
 
